@@ -16,13 +16,24 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install translate
-
 ## Usage
 
-TODO: Write usage instructions here
+Use your API key:
+```ruby
+translator = Translate::TranApi.new('apikey')
+```
+List of possible directions of translation:
+```ruby
+translator.get_langs('ru')
+```
+Language Recognition:
+```ruby
+translator.detect('text')
+```
+Translation:
+```ruby
+translator.trans('text', 'lang_from', 'lang_to')
+```
 
 ## Development
 
