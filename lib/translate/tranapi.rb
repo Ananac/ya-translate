@@ -12,18 +12,18 @@ module Translate
 
     def get_langs(ui)
       path = "getLangs?ui=#{ui}&key=#{@key}"
-      return HTTParty.post(merge_url(path)).parsed_response["langs"]
+      HTTParty.post(merge_url(path)).parsed_response["langs"]
     end
 
     def detect(text)
       path = "detect?key=#{@key}"
-      return HTTParty.post(merge_url(path), body: {text: text}).parsed_response["lang"]
+      HTTParty.post(merge_url(path), body: {text: text}).parsed_response["lang"]
     end
 
     def trans(text, langfrom, langto)
       lang = "#{langfrom}-#{langto}"
       path = "/translate?key=#{@key}&lang=#{lang}"
-      return HTTParty.post(merge_url(path), body: {text: text}).parsed_response["text"]
+      HTTParty.post(merge_url(path), body: {text: text}).parsed_response["text"]
     end
   end
 end
