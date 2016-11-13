@@ -20,6 +20,7 @@ Use your API key:
 ```ruby
 translator = Translate::TranApi.new('apikey')
 ```
+
 List of possible directions of translation:
 ```ruby
 translator.get_langs('language')
@@ -28,6 +29,7 @@ Example:
 ```ruby
 translator.get_langs('en')
 ```
+
 Language Recognition:
 ```ruby
 translator.detect('text')
@@ -36,6 +38,7 @@ Example:
 ```ruby
 translator.detect('Hello')
 ```
+
 Translation:
 ```ruby
 translator.trans('text', 'lang_from', 'lang_to')
